@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rarest Theft: An Analysis of Opportunistic Key Theft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-arrow {
+            color: #0A9396;
+            font-size: 2rem;
+            line-height: 1;
+        }
+        .flowchart-box {
+            border-color: #0A9396;
+            background-color: #ffffff;
+        }
+        .flowchart-decision {
+            transform: rotate(45deg);
+            width: 150px;
+            height: 150px;
+        }
+        .flowchart-decision-text {
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- 
+    Chosen Color Palette: 'Brilliant Blues'
+    #005F73, #0A9396, #94D2BD, #E9D8A6, #EE9B00, #CA6702, #BB3E03, #AE2012, #9B2226
+
+    Narrative Plan:
+    1. Hook: Start with the core finding - the statistical rarity of key theft.
+    2. Why?: Explain the offender's irrational calculus with a flowchart.
+    3. Comparison: Show what's actually stolen with a bar chart.
+    4. Deeper Why: Analyze target unsuitability with a radar chart.
+    5. Context: Contrast opportunistic vs. planned theft scenarios.
+    6. Psychology: Explain the divergence of risk and fear.
+
+    Visualization Choices & Justification (NO SVG/MERMAID CONFIRMED):
+    - Big Number (HTML Text): Goal: Inform. Justification: High-impact, immediate communication of the core stat.
+    - Flowchart (HTML/Tailwind CSS): Goal: Organize/Process. Justification: Perfectly illustrates the offender's decision-making logic. Method: Flexbox, borders, and Unicode characters for arrows.
+    - Bar Chart (Chart.js/Canvas): Goal: Compare. Justification: Best for comparing quantities across different categories (types of stolen items).
+    - Radar Chart (Chart.js/Canvas): Goal: Compare. Justification: Excellent for multivariate comparison of two items (Key vs. Smartphone) against the CRAVED criteria.
+    - Info Cards (HTML/Tailwind CSS): Goal: Compare/Organize. Justification: Clear, structured way to contrast different crime scenarios.
+    - Dual Stat Blocks (HTML/Tailwind CSS): Goal: Inform/Compare. Justification: Simple and effective for showing the stark contrast between two related numbers (risk vs. fear).
+
+    NEITHER MERMAID JS NOR SVG WERE USED IN THIS DOCUMENT.
+    -->
+    <header class="bg-[#005F73] text-white p-8 text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-black mb-2">The Unattractive Target</h1>
+        <p class="text-lg md:text-xl text-[#94D2BD]">A Data-Driven Look at the Near-Impossible Crime of Opportunistic Key Theft</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="intro" class="text-center my-12 md:my-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4">Statistically Invisible</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-8">
+                 The act of a stranger snatching keys from your hand is so rare, it doesn't even have its own category in major crime databases. The likelihood is statistically indistinguishable from zero.
+            </p>
+            <div class="bg-white rounded-xl shadow-2xl p-8 max-w-sm mx-auto border-4 border-[#0A9396]">
+                <p class="text-2xl font-bold text-gray-700 mb-2">Recorded Incidents in Official Crime Taxonomies (e.g., NIBRS):</p>
+                <p class="text-9xl font-black text-[#AE2012]">0</p>
+                <p class="text-lg text-gray-600 mt-2">Any such event is lost in the "All Other Larceny" category, confirming its analytical irrelevance.</p>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="calculus" class="my-12 md:my-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4 text-center">The Offender's Failed Calculus</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                According to Rational Choice Theory, criminals weigh costs against benefits. For an opportunistic thief, snatching a stranger's keys is a fundamentally irrational act. The process below shows why the idea is rejected almost instantly.
+            </p>
+            <div class="flex flex-col items-center space-y-4">
+                <div class="flowchart-box p-4 rounded-lg border-2 w-64 text-center">
+                    <p class="font-bold">See Keys in Stranger's Hand</p>
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="flex items-center justify-center flowchart-box border-2 rounded-lg flowchart-decision">
+                    <p class="font-bold text-center flowchart-decision-text">Immediate Value?</p>
+                </div>
+                <div class="flex w-full max-w-lg justify-around">
+                    <div class="flex flex-col items-center">
+                        <div class="flowchart-arrow">↘</div>
+                        <div class="flowchart-box p-4 rounded-lg border-2 w-48 text-center bg-red-50 border-red-400">
+                            <p class="font-bold text-red-600">NO</p>
+                            <p class="text-sm">Keys have no cash value. Cannot be fenced or sold.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="flex items-center justify-center flowchart-box border-2 rounded-lg flowchart-decision">
+                    <p class="font-bold text-center flowchart-decision-text">High Risk vs. Reward?</p>
+                </div>
+                 <div class="flex w-full max-w-lg justify-around">
+                    <div class="flex flex-col items-center">
+                        <div class="flowchart-arrow">↘</div>
+                        <div class="flowchart-box p-4 rounded-lg border-2 w-64 text-center bg-red-50 border-red-400">
+                            <p class="font-bold text-red-600">YES - HIGH RISK, ZERO REWARD</p>
+                            <p class="text-sm">High chance of confrontation, being identified, and resistance from victim.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="flowchart-arrow">↓</div>
+                <div class="bg-[#AE2012] text-white p-6 rounded-xl shadow-lg w-72 text-center">
+                    <p class="text-2xl font-bold">DECISION: REJECT</p>
+                    <p>Target is not viable. Seek alternative (phone, wallet).</p>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="comparison" class="my-12 md:my-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4 text-center">What Thieves Actually Target</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                Data on "theft from the person" offenses consistently shows a clear preference for items with high, immediate, and easily convertible value. Keys are never a primary target.
+            </p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="chart-container">
+                    <canvas id="theftComparisonChart"></canvas>
+                </div>
+                 <p class="text-center text-sm text-gray-500 mt-4">Relative frequency of items stolen in "theft from person" crimes. "Keys" are included for illustrative purposes only, as they are not tracked.</p>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="suitability" class="my-12 md:my-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4 text-center">Failing the "Hot Product" Test</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                The CRAVED model explains what makes an item a "hot product" for thieves. A modern smartphone is a perfect target. A set of keys fails on the most critical points: Value and Disposability.
+            </p>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="chart-container">
+                    <canvas id="cravedRadarChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="context" class="my-12 md:my-16">
+            <h2 class="text-3xl font-bold text-[#005F73] mb-4 text-center">Context is Everything: When Keys *Are* Stolen</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                Keys are not inherently valueless to criminals, but their value is created by context and planning. The opportunistic street snatch is irrational because the thief lacks critical information. In planned crimes, this information problem is solved *before* the theft.
+            p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-8 border-[#EE9B00]">
+                    <h3 class="text-xl font-bold text-[#CA6702] mb-3">Scenario 1: Opportunistic Snatch</h3>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside">
+                        <li><strong>Offender:</strong> Impulsive, low-skill</li>
+                        <li><strong>Motivation:</strong> Immediate, small gain</li>
+                        <li><strong>Planning:</strong> None</li>
+                        <li><strong>Information:</strong> Has key, but no idea where the lock is</li>
+                        <li><strong>Value:</strong> Negligible</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-8 border-[#BB3E03]">
+                    <h3 class="text-xl font-bold text-[#BB3E03] mb-3">Scenario 2: "Car-Key" Burglary</h3>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside">
+                        <li><strong>Offender:</strong> Planned, professional</li>
+                        <li><strong>Motivation:</strong> Steal a high-value car</li>
+                        <li><strong>Planning:</strong> High (target selected first)</li>
+                        <li><strong>Information:</strong> Knows exactly what the key unlocks</li>
+                        <li><strong>Value:</strong> Extremely High (Value of car)</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-t-8 border-[#9B2226]">
+                    <h3 class="text-xl font-bold text-[#9B2226] mb-3">Scenario 3: High-Tech Cloning</h3>
+                    <ul class="space-y-2 text-gray-700 list-disc list-inside">
+                        <li><strong>Offender:</strong> Organized, technical specialist</li>
+                        <li><strong>Motivation:</strong> High-volume vehicle theft</li>
+                        <li><strong>Planning:</strong> High (requires special tools)</li>
+                        <li><strong>Information:</strong> Has tools to extract key's data</li>
+                        <li><strong>Value:</strong> Extremely High (Value of many cars)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-16 border-t-2 border-gray-200">
+
+        <section id="fear" class="my-12 md:my-16">
+             <h2 class="text-3xl font-bold text-[#005F73] mb-4 text-center">The Risk vs. Fear Paradox</h2>
+             <p class="max-w-3xl mx-auto text-lg text-gray-600 mb-12 text-center">
+                While the statistical risk is near zero, the fear is real. A stolen key is a profound symbolic violation of personal safety, creating anxiety that far outweighs the objective probability of the event.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center border-l-8 border-[#0A9396]">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-2">Objective Risk</h3>
+                    <p class="text-7xl font-black text-[#0A9396]">LOW</p>
+                    <p class="text-gray-600 mt-2">Statistically negligible. An irrational act for an opportunistic offender.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center border-l-8 border-[#AE2012]">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-2">Subjective Fear</h3>
+                    <p class="text-7xl font-black text-[#AE2012]">HIGH</p>
+                    <p class="text-gray-600 mt-2">Represents loss of security, control, and sanctuary. A deep psychological threat.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-[#005F73] text-white mt-16 p-6 text-center">
+        <p>&copy; 2025 Criminological Data Insights. Infographic based on the report "The Unattractive Target".</p>
+    </footer>
+
+<script>
+    function wrapText(str, maxWidth) {
+        if (str.length <= maxWidth) {
+            return str;
+        }
+        const words = str.split(' ');
+        const lines = [];
+        let currentLine = '';
+
+        for (const word of words) {
+            if ((currentLine + word).length <= maxWidth) {
+                currentLine += word + ' ';
+            } else {
+                lines.push(currentLine.trim());
+                currentLine = word + ' ';
+            }
+        }
+        lines.push(currentLine.trim());
+        return lines;
+    }
+
+    const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+            return label.join(' ');
+        }
+        return label;
+    };
+
+    const commonChartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#1f2937',
+                    font: {
+                        size: 14
+                    }
+                }
+            },
+            tooltip: {
+                callbacks: {
+                    title: tooltipTitleCallback
+                }
+            }
+        },
+        scales: {
+            y: {
+                ticks: { color: '#4b5563' },
+                grid: { color: '#e5e7eb' }
+            },
+            x: {
+                ticks: { color: '#4b5563' },
+                grid: { color: '#e5e7eb' }
+            }
+        }
+    };
+
+    const theftComparisonData = {
+        labels: ['Mobile Phones', 'Wallets / Purses', 'Cash', 'Jewelry', 'Laptops / Tablets', 'Keys (Hypothetical)'],
+        datasets: [{
+            label: 'Relative Likelihood of being Stolen',
+            data: [95, 85, 80, 60, 55, 1],
+            backgroundColor: [
+                '#0A9396',
+                '#94D2BD',
+                '#E9D8A6',
+                '#EE9B00',
+                '#CA6702',
+                '#AE2012'
+            ],
+            borderColor: '#ffffff',
+            borderWidth: 2
+        }]
+    };
+
+    new Chart(document.getElementById('theftComparisonChart'), {
+        type: 'bar',
+        data: theftComparisonData,
+        options: {
+            ...commonChartOptions,
+            indexAxis: 'y',
+             plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { title: tooltipTitleCallback } }
+            }
+        }
+    });
+
+    const cravedRadarData = {
+        labels: wrapText('Concealable Removable Available Valuable Enjoyable Disposable', 12),
+        datasets: [{
+            label: 'Smartphone',
+            data: [9, 8, 9, 9, 8, 8],
+            backgroundColor: 'rgba(10, 147, 150, 0.2)',
+            borderColor: '#0A9396',
+            pointBackgroundColor: '#0A9396',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: '#0A9396'
+        }, {
+            label: 'Keys',
+            data: [9, 5, 9, 1, 1, 1],
+            backgroundColor: 'rgba(174, 32, 18, 0.2)',
+            borderColor: '#AE2012',
+            pointBackgroundColor: '#AE2012',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: '#AE2012'
+        }]
+    };
+
+    new Chart(document.getElementById('cravedRadarChart'), {
+        type: 'radar',
+        data: cravedRadarData,
+        options: {
+            ...commonChartOptions,
+            scales: {
+                r: {
+                    angleLines: { color: '#e5e7eb' },
+                    grid: { color: '#e5e7eb' },
+                    pointLabels: {
+                        font: { size: 14 },
+                        color: '#1f2937'
+                    },
+                    ticks: {
+                        backdropColor: 'transparent',
+                        color: '#4b5563'
+                    },
+                     suggestedMin: 0,
+                     suggestedMax: 10
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
